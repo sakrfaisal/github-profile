@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #97a3b6;
+  --color-secondary: #cdd5e0;
+  --color-tertiary: #111729;
+  --color-quaternary: #20293a;
+  --color-quinary: #364153;
+  --color-septenary: #1d1b48;
+}
+
+body {
+  @apply text-white bg-quaternary;
+  font-family: "Be Vietnam Pro", sans-serif;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.bg-linear-card {
+  background: linear-gradient(95deg, #111729 3%, #1d1b48 99.61%);
+}
+
+body::-webkit-scrollbar {
+  width: 6px;
+  border-radius: 6px;
+  background: transparent;
+}
+body::-webkit-scrollbar-thumb {
+  background: #364153;
+  border-radius: 6px;
+}
+body::-webkit-scrollbar-track {
+  background: #20293a;
+  border-radius: 6px;
+}
+
+#loader span {
+  @apply size-4 rounded-full bg-indigo-400;
+  animation: upAndDown 1s ease-in-out infinite;
+}
+#loader span:nth-child(1) {
+  animation-delay: -0.3s;
+}
+#loader span:nth-child(2) {
+  animation-delay: -0.15s;
+}
+
+@keyframes upAndDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
