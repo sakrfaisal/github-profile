@@ -12,8 +12,8 @@ const Search = ({ getUserData }: SearchProps) => {
   const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
 
   useEffect(() => {
-    if (searchBar.trim().length > 3) {
-      fetchSearchResults(searchBar.trim());
+    if (searchBar.length > 3) {
+      fetchSearchResults(searchBar);
     } else {
       setSearchResults([]);
     }
@@ -23,7 +23,7 @@ const Search = ({ getUserData }: SearchProps) => {
   function fetchSearchResults(query: string) {
     clearTimeout(debounceTimeout);
     debounceTimeout = setTimeout(() => {
-      fetch(`https://api.github.com/search/users?q=${query}&type=users&per_page=5`)
+      fetch(`https://api.github.com/search/users?q=${query}&type=users&per_page=10`)
         .then((res) => res.json())
         .then((data) => {
           setSearchResults(data.items);
@@ -66,7 +66,7 @@ const Search = ({ getUserData }: SearchProps) => {
           searchResults.map((user, index) => (
             <li key={index}>
               <button
-                className="flex items-center gap-4 w-full bg-tertiary rounded-lg p-2 hover:bg-tertiary/90 transition-colors duration-200 cursor-pointer"
+                className="flex items-center gap-4 w-full bg-tertiary rounded-lg p-2 hover:bg-[#191e32] transition-colors duration-200 cursor-pointer"
                 onClick={() => handleResultClick(user)}>
                 <img
                   src={user.avatar_url}
