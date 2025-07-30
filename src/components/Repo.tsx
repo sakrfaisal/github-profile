@@ -27,7 +27,7 @@ const Repo = ({ repo }: { repo: RepoType }) => {
           {repo.license && (
             <span className="flex items-center gap-1">
               <img
-                src="/Chield_alt.svg"
+                src="Chield_alt.svg"
                 alt={`${repo.license.spdx_id} License`}
                 width={24}
                 height={24}
@@ -37,13 +37,13 @@ const Repo = ({ repo }: { repo: RepoType }) => {
           )}
           {repo.forks_count !== 0 && (
             <span className="flex items-center gap-1">
-              <img src="/Nesting.svg" alt="Forks" width={24} height={24} />
+              <img src="Nesting.svg" alt="Forks" width={24} height={24} />
               {repo.forks_count}
             </span>
           )}
           {repo.stargazers_count !== 0 && (
             <span className="flex items-center gap-1">
-              <img src="/Star.svg" alt="Stars" width={24} height={24} />
+              <img src="Star.svg" alt="Stars" width={24} height={24} />
               {repo.stargazers_count}
             </span>
           )}

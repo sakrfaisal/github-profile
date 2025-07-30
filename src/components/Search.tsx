@@ -47,7 +47,7 @@ const Search = ({ getUserData }: SearchProps) => {
     <div className="container mx-auto px-6 w-full flex flex-col items-center h-40 sm:h-60">
       <div className="w-full sm:w-100 relative">
         <img
-          src="/Search.svg"
+          src="Search.svg"
           alt="Search Icon"
           className="absolute left-2.5 top-1/2 -translate-y-1/2"
           width={24}
